@@ -210,7 +210,7 @@ export default function TemplatesPage() {
               id={template.slug}
               className="section-smooth scroll-reveal grid items-center gap-6 lg:grid-cols-[0.72fr_1fr] lg:gap-12"
             >
-              <div className="flex flex-col justify-center">
+              <div className="order-2 flex flex-col justify-center lg:order-1">
                 <span className="text-sm font-semibold text-sky-500">
                   Template
                 </span>
@@ -220,6 +220,10 @@ export default function TemplatesPage() {
                 <p className="mt-4 max-w-xl text-sm leading-6 text-zinc-600 sm:text-base dark:text-zinc-400">
                   {template.description}
                 </p>
+
+                <div className="mt-5 text-2xl font-semibold tracking-[-0.05em] text-zinc-950 sm:text-3xl lg:hidden dark:text-white">
+                  {template.price}
+                </div>
 
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <GetAccessButton
@@ -251,7 +255,7 @@ export default function TemplatesPage() {
                 </div>
               </div>
 
-              <div>
+              <div className="order-1 lg:order-2">
                 <div className="smooth-card preview-float relative min-h-[240px] overflow-hidden rounded-[1.5rem] border border-zinc-900/10 bg-[#07070a] shadow-2xl shadow-black/20 sm:min-h-[360px] dark:border-white/10">
                   <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:56px_56px]" />
                   <div
