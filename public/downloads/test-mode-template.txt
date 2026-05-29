@@ -1,0 +1,3 @@
+Test Mode Template
+
+This is a test download file for checking the Quarix thank-you page without payment.
