@@ -94,10 +94,9 @@ export default async function GetStartedPage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-black text-white">
-      <div className="pointer-events-none fixed inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_50%_0%,rgba(56,189,248,0.24),transparent_62%)]" />
-      <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:72px_72px]" />
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+    <div className="min-h-screen overflow-x-hidden bg-white text-zinc-950 dark:bg-black dark:text-white">
+      <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(rgba(9,9,11,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(9,9,11,0.045)_1px,transparent_1px)] bg-[size:72px_72px] dark:bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)]" />
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-200/70 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-black/80">
         <nav className="mx-auto flex h-12 max-w-6xl items-center justify-between px-4 sm:h-14 sm:px-6 lg:px-8">
           <Link
             href="/"
@@ -118,8 +117,8 @@ export default async function GetStartedPage({ params }: PageProps) {
           </Link>
 
           <Link
-            href="/#services"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-zinc-200 transition hover:bg-white/10"
+            href="/services"
+            className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-xs font-semibold text-zinc-700 transition hover:bg-zinc-100 dark:border-white/10 dark:bg-white/5 dark:text-zinc-200 dark:hover:bg-white/10"
           >
             <ArrowLeft className="size-3.5" />
             Back to services
@@ -129,7 +128,7 @@ export default async function GetStartedPage({ params }: PageProps) {
 
       <main className="relative mx-auto w-full max-w-6xl px-4 pb-16 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
         <section className="hero-reveal mx-auto max-w-3xl text-center">
-          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-sky-400/20 bg-sky-400/10 px-3 py-1 text-xs font-semibold text-sky-300 shadow-sm shadow-sky-950/20 backdrop-blur">
+          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-400/10 px-3 py-1 text-xs font-semibold text-sky-600 shadow-sm shadow-sky-950/10 backdrop-blur dark:text-sky-300 dark:shadow-sky-950/20">
             <Mail className="size-3.5" />
             Contact by email
           </span>
@@ -137,22 +136,22 @@ export default async function GetStartedPage({ params }: PageProps) {
           <h1 className="mx-auto mt-5 max-w-3xl text-balance text-3xl font-semibold tracking-[-0.065em] min-[420px]:text-4xl sm:text-6xl lg:text-7xl">
             Let&apos;s start your
             <br />
-            <span className="bg-gradient-to-r from-white via-zinc-200 to-sky-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-zinc-950 via-zinc-700 to-sky-500 bg-clip-text text-transparent dark:from-white dark:via-zinc-200 dark:to-sky-300">
               {service.title}
             </span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-pretty text-sm leading-6 text-zinc-400 sm:text-base">
+          <p className="mx-auto mt-5 max-w-2xl text-pretty text-sm leading-6 text-zinc-600 sm:text-base dark:text-zinc-400">
             {service.description} Fill out the form and your request will be
             sent directly to my inbox using Resend.
           </p>
         </section>
 
         <section className="mt-10 grid gap-6 lg:grid-cols-[0.78fr_1fr] lg:items-start lg:gap-8">
-          <aside className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-black/40 backdrop-blur sm:p-6">
+          <aside className="rounded-[2rem] border border-zinc-200 bg-white/80 p-5 shadow-2xl shadow-zinc-950/10 backdrop-blur sm:p-6 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-black/40">
             <div className="flex flex-col gap-4 min-[420px]:flex-row min-[420px]:items-start min-[420px]:justify-between">
               <div>
-                <p className="text-sm font-medium text-zinc-400">
+                <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
                   Selected package
                 </p>
                 <h2 className="mt-2 text-2xl font-semibold tracking-[-0.05em]">
@@ -164,23 +163,11 @@ export default async function GetStartedPage({ params }: PageProps) {
               />
             </div>
 
-            <div className="mt-6 rounded-3xl border border-white/10 bg-white/[0.04] p-4">
-              <p className="text-sm text-zinc-400">
-                Starting from
-              </p>
-              <p className="mt-1 text-4xl font-semibold tracking-[-0.06em]">
-                {service.price}
-                <span className="ml-2 text-sm font-medium tracking-normal text-zinc-400">
-                  INR
-                </span>
-              </p>
-            </div>
-
             <ul className="mt-6 space-y-3">
               {service.features.map((feature) => (
                 <li
                   key={feature}
-                  className="flex items-start gap-3 text-sm leading-5 text-zinc-200"
+                  className="flex items-start gap-3 text-sm leading-5 text-zinc-700 dark:text-zinc-200"
                 >
                   <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-sky-400/10 text-sky-300">
                     <svg
@@ -203,11 +190,11 @@ export default async function GetStartedPage({ params }: PageProps) {
               ))}
             </ul>
 
-            <div className="mt-6 rounded-3xl border border-white/10 bg-black/40 p-4">
-              <p className="text-sm font-semibold text-white">
+            <div className="mt-6 rounded-3xl border border-zinc-200 bg-zinc-50 p-4 dark:border-white/10 dark:bg-black/40">
+              <p className="text-sm font-semibold text-zinc-950 dark:text-white">
                 What happens next?
               </p>
-              <p className="mt-2 text-sm leading-6 text-zinc-400">
+              <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
                 I review your request, reply by email, and share the project
                 scope, timeline, and next steps.
               </p>

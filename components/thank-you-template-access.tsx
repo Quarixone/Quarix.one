@@ -113,7 +113,7 @@ export function ThankYouTemplateAccess({
   }, []);
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#050505] px-4 pb-6 pt-6 text-white sm:px-6 lg:pb-8 lg:pt-8">
+    <main className="relative min-h-screen overflow-x-hidden bg-white px-4 pb-6 pt-6 text-zinc-950 sm:px-6 lg:pb-8 lg:pt-8 dark:bg-[#050505] dark:text-white">
       <Confetti
         ref={confettiRef}
         manualstart
@@ -123,7 +123,7 @@ export function ThankYouTemplateAccess({
       <section className="relative z-10 mx-auto w-full max-w-6xl">
         <Link
           href="/templates"
-          className="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition hover:text-white"
+          className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
         >
           <ArrowLeft className="size-4" />
           Back to templates
@@ -140,7 +140,7 @@ export function ThankYouTemplateAccess({
           <h1 className="mt-4 text-balance text-3xl font-semibold tracking-[-0.06em] min-[420px]:text-4xl sm:text-6xl">
             Thank you for your purchase.
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-zinc-400 sm:text-base">
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-zinc-600 sm:text-base dark:text-zinc-400">
             Your Quarix template access is ready. Download the source code or
             open the live preview below.
           </p>
@@ -156,15 +156,15 @@ export function ThankYouTemplateAccess({
               type={template.previewType}
               accent={template.accent}
             />
-            <aside className="flex flex-col justify-between rounded-[2rem] border border-white/10 p-5 text-left sm:p-6">
+            <aside className="flex flex-col justify-between rounded-[2rem] border border-zinc-200 p-5 text-left shadow-sm sm:p-6 dark:border-white/10 dark:shadow-none">
               <div>
                 <span className="inline-flex rounded-full border border-sky-400/20 bg-sky-400/10 px-3 py-1 text-xs font-semibold text-sky-200">
                   Template access
                 </span>
-                <h2 className="mt-5 text-3xl font-semibold tracking-[-0.055em] text-white sm:text-4xl">
+                <h2 className="mt-5 text-3xl font-semibold tracking-[-0.055em] text-zinc-950 sm:text-4xl dark:text-white">
                   {template.name}
                 </h2>
-                <p className="mt-4 text-sm leading-6 text-zinc-400">
+                <p className="mt-4 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
                   {template.description}
                 </p>
               </div>
@@ -173,7 +173,7 @@ export function ThankYouTemplateAccess({
                 <a
                   href={template.downloadUrl}
                   download
-                  className="inline-flex h-12 items-center justify-center rounded-2xl bg-white px-5 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
+                  className="inline-flex h-12 items-center justify-center rounded-2xl bg-zinc-950 px-5 text-sm font-semibold text-white transition hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
                 >
                   <Download className="mr-2 size-4" />
                   Download Source Code
@@ -182,7 +182,7 @@ export function ThankYouTemplateAccess({
                   href={template.livePreviewUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 text-sm font-semibold text-white transition hover:bg-white/10"
+                  className="inline-flex h-12 items-center justify-center rounded-2xl border border-zinc-200 bg-white px-5 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-50 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
                 >
                   Live Preview
                   <ExternalLink className="ml-2 size-4" />
@@ -192,7 +192,7 @@ export function ThankYouTemplateAccess({
           </div>
         </div>
       </section>
-      <div className="dark relative z-10 mt-20">
+      <div className="relative z-10 mt-20">
         <Footer />
       </div>
     </main>

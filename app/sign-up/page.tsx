@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { AuthPage } from "@/components/auth-page";
+import { AuthCard } from "@/components/auth-card";
 
 export const metadata: Metadata = {
   title: "Sign Up - Quarix",
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function SignUpPage() {
-  return <AuthPage mode="sign-up" />;
+  return <AuthCard mode="sign-up" />;
 }

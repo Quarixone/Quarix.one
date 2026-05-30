@@ -16,8 +16,9 @@ export const metadata: Metadata = {
 
 const navItems = [
   { label: "Templates", href: "/templates" },
-  { label: "Showcase", href: "/#showcase" },
-  { label: "Services", href: "/#services" },
+  { label: "Showcase", href: "/showcase" },
+  { label: "Services", href: "/services" },
+  { label: "AI Agents", href: "/ai-agents" },
 ];
 
 const templates = [
@@ -117,6 +118,13 @@ function SiteHeader() {
                   {item.label}
                 </Link>
               ))}
+              <div className="my-1 h-px bg-zinc-200 dark:bg-white/10" />
+              <Link
+                href="/sign-in"
+                className="block rounded-xl px-3 py-2 transition hover:bg-zinc-100 dark:hover:bg-white/10"
+              >
+                Sign in
+              </Link>
             </div>
           </details>
         </div>

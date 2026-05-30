@@ -1,16 +1,20 @@
 import { Menu } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Footer } from "@/components/footer";
+import { HeroShimmerLink } from "@/components/hero-shimmer-link";
 import { ProfileMenu } from "@/components/profile-menu";
 import { SearchCommand } from "@/components/search-command";
+import { ServiceShimmerLink } from "@/components/service-shimmer-link";
 import { AuroraText } from "@/components/ui/aurora-text";
 
 const navItems = [
   { label: "Templates", href: "/templates" },
-  { label: "Showcase", href: "#showcase" },
-  { label: "Services", href: "#services" },
+  { label: "Showcase", href: "/showcase" },
+  { label: "Services", href: "/services" },
+  { label: "AI Agents", href: "/ai-agents" },
 ];
 
 const showcaseCards = [
@@ -103,7 +107,6 @@ const serviceCards = [
   {
     slug: "custom-website-design",
     title: "Custom Website Design",
-    price: "₹4,999",
     iconType: "design",
     description:
       "We design stunning, modern websites tailored to your brand - clean, fast, and built to impress visitors from the first second.",
@@ -118,7 +121,6 @@ const serviceCards = [
   {
     slug: "full-functional-business-site",
     title: "Full Functional Business Site",
-    price: "₹14,999",
     iconType: "business",
     description:
       "A complete, fully functional business website with booking systems, payment integration, admin dashboard and everything your business needs.",
@@ -133,7 +135,6 @@ const serviceCards = [
   {
     slug: "ai-powered-business-website",
     title: "AI Powered Business Website",
-    price: "₹19,999",
     iconType: "ai",
     description:
       "Your website that works while you sleep. Full custom site with an AI chatbot trained on your business - answers questions, captures leads and books appointments 24/7.",
@@ -245,6 +246,13 @@ export default function Home() {
                     {item.label}
                   </a>
                 ))}
+                <div className="my-1 h-px bg-zinc-200 dark:bg-white/10" />
+                <Link
+                  href="/sign-in"
+                  className="block rounded-xl px-3 py-2 transition hover:bg-zinc-100 dark:hover:bg-white/10"
+                >
+                  Sign in
+                </Link>
               </div>
             </details>
           </div>
@@ -253,15 +261,15 @@ export default function Home() {
       <main id="home" className="flex-1 pt-12 sm:pt-14">
         <section className="hero-reveal mx-auto flex w-full max-w-4xl flex-col items-center px-4 pb-16 pt-12 text-center sm:px-6 sm:pb-20 sm:pt-16 lg:px-8 lg:pt-20">
           <div className="relative mb-5 size-12 sm:size-16">
-            <Image
+        <Image
               src="/quarix-logo-transparent.png"
               alt="Quarix logo"
               fill
               sizes="(min-width: 640px) 64px, 48px"
               className="object-contain"
               loading="eager"
-              priority
-            />
+          priority
+        />
           </div>
 
           <h1 className="max-w-3xl text-balance text-3xl font-semibold tracking-[-0.055em] text-zinc-950 min-[380px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl dark:text-white">
@@ -278,18 +286,12 @@ export default function Home() {
           </p>
 
           <div className="mt-8 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-            <a
-              href="#home"
-              className="inline-flex h-10 w-full items-center justify-center rounded-full bg-zinc-950 px-5 text-xs font-medium text-white shadow-lg shadow-zinc-950/10 transition hover:bg-zinc-800 sm:w-auto dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
-            >
-              Get Unlimited Access
-            </a>
-            <a
+            <HeroShimmerLink href="/services" label="Get service support" />
+            <HeroShimmerLink
               href="/templates"
-              className="inline-flex h-10 w-full items-center justify-center rounded-full border border-zinc-200 bg-white px-5 text-xs font-medium text-zinc-950 shadow-sm transition hover:bg-zinc-50 sm:w-auto dark:border-white/10 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800"
-            >
-              Browse Template
-            </a>
+              label="Browse Template"
+              variant="secondary"
+            />
           </div>
         </section>
 
@@ -385,127 +387,113 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="services" className="section-smooth scroll-reveal mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-medium uppercase tracking-[0.28em] text-zinc-500 dark:text-zinc-400">
-              Services
-            </p>
-            <h2 className="mt-3 text-balance text-3xl font-semibold tracking-[-0.05em] text-zinc-950 sm:text-5xl dark:text-white">
-              Everything You Need to
-              <br />
-              Launch Online
-            </h2>
-            <p className="mt-5 text-pretty text-sm leading-6 text-zinc-600 sm:text-base dark:text-zinc-400">
-              From ready-made templates to fully custom AI-powered websites -
-              every solution to get your business online fast.
-            </p>
-          </div>
+        <section id="services" className="section-smooth scroll-reveal mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="rounded-[2rem] border border-zinc-200 bg-zinc-50 px-4 py-14 text-zinc-950 shadow-sm sm:px-6 sm:py-16 lg:px-10 dark:border-white/10 dark:bg-[#050505] dark:text-white">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-balance text-3xl font-semibold tracking-[-0.05em] text-zinc-950 sm:text-5xl dark:text-white">
+                Plans that Scale with You
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-6 text-zinc-600 sm:text-base dark:text-zinc-400">
+                Whether you&apos;re just starting out or growing fast, our
+                flexible services have you covered - with no hidden costs.
+              </p>
 
-          <div className="mx-auto mt-8 grid max-w-5xl gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {serviceCards.map((service) => (
+            </div>
+
+            <div className="mx-auto mt-9 grid max-w-5xl gap-4 lg:grid-cols-3">
+            {[serviceCards[0], serviceCards[2], serviceCards[1]].map((service) => (
               <article
                 key={service.title}
-                className={`smooth-card relative flex h-full flex-col rounded-3xl border p-5 shadow-sm sm:p-6 ${
+                className={`smooth-card relative flex min-h-[29rem] flex-col overflow-hidden rounded-xl border ${
                   service.featured
-                    ? "border-zinc-950 bg-white text-zinc-950 shadow-xl shadow-zinc-950/10 dark:border-white dark:bg-zinc-950 dark:text-white dark:shadow-none"
-                    : "border-zinc-200 bg-white text-zinc-950 dark:border-white/10 dark:bg-zinc-900/70 dark:text-white"
+                    ? "border-zinc-950 bg-zinc-950 text-white shadow-2xl shadow-zinc-950/20 dark:border-white/10 dark:bg-white/[0.09] dark:shadow-black/30"
+                    : "border-zinc-200 bg-white text-zinc-950 shadow-sm dark:border-white/10 dark:bg-[#070707] dark:text-white"
                 }`}
               >
-                <div className="mb-5 grid size-12 place-items-center text-zinc-950 dark:text-white">
-                  {service.iconType === "design" ? (
-                    <svg
-                      viewBox="0 0 48 48"
-                      aria-hidden="true"
-                      className="size-10"
-                      fill="none"
-                    >
-                      <rect
-                        x="7"
-                        y="10"
-                        width="34"
-                        height="26"
-                        rx="5"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                      />
-                      <path
-                        d="M7 18h34M15 15h.1M20 15h.1M23 28l5-5 5 5M28 23v13"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  ) : service.iconType === "business" ? (
-                    <svg
-                      viewBox="0 0 48 48"
-                      aria-hidden="true"
-                      className="size-10"
-                      fill="none"
-                    >
-                      <rect
-                        x="8"
-                        y="12"
-                        width="32"
-                        height="28"
-                        rx="4"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                      />
-                      <path
-                        d="M16 12V9.5A3.5 3.5 0 0 1 19.5 6h9A3.5 3.5 0 0 1 32 9.5V12M8 23h32M18 23v4h12v-4"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  ) : service.iconType === "ai" ? (
-                    <svg
-                      viewBox="0 0 48 48"
-                      aria-hidden="true"
-                      className="size-10"
-                      fill="none"
-                    >
-                      <path
-                        d="M24 5l2.7 10.3L37 18l-10.3 2.7L24 31l-2.7-10.3L11 18l10.3-2.7L24 5Z"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M37 29l1.5 5.5L44 36l-5.5 1.5L37 43l-1.5-5.5L30 36l5.5-1.5L37 29ZM12 30l1.1 4L17 35l-3.9 1L12 40l-1.1-4L7 35l3.9-1L12 30Z"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  ) : null}
-                </div>
+                <div className="flex min-h-40 flex-col p-5 sm:p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3
+                        className={`text-lg font-semibold tracking-[-0.03em] ${
+                          service.featured
+                            ? "text-white"
+                            : "text-zinc-950 dark:text-white"
+                        }`}
+                      >
+                        {service.title}
+                      </h3>
+                      <p
+                        className={`mt-1 text-sm ${
+                          service.featured
+                            ? "text-zinc-300"
+                            : "text-zinc-500 dark:text-zinc-400"
+                        }`}
+                      >
+                        {service.featured
+                          ? "For small businesses"
+                          : service.iconType === "design"
+                            ? "For most individuals"
+                            : "For large organizations"}
+                      </p>
+                    </div>
 
-                <div className="flex flex-col gap-3 min-[420px]:flex-row min-[420px]:items-start min-[420px]:justify-between">
-                  <h3 className="text-lg font-semibold tracking-[-0.04em] sm:text-xl">
-                    {service.title}
-                  </h3>
-                  {service.featured ? (
-                    <span className="shrink-0 rounded-xl bg-zinc-950 px-2.5 py-1 text-[11px] font-semibold text-white shadow-lg shadow-zinc-950/20 dark:bg-white dark:text-zinc-950">
-                      Popular
+                    {service.featured ? (
+                      <span className="inline-flex items-center gap-1 rounded-md border border-white/10 bg-black/60 px-2 py-1 text-[11px] font-medium text-white">
+                        <svg
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                          className="size-3 fill-current"
+                        >
+                          <path d="M12 2.5 14.9 8.6l6.6.9-4.8 4.7 1.1 6.6L12 17.7l-5.8 3.1 1.1-6.6-4.8-4.7 6.6-.9L12 2.5Z" />
+                        </svg>
+                        Popular
+                      </span>
+                    ) : null}
+                  </div>
+
+                  <div className="mt-8">
+                    <span
+                      className={`text-3xl font-bold tracking-[-0.05em] sm:text-4xl ${
+                        service.featured
+                          ? "text-white"
+                          : "text-zinc-950 dark:text-white"
+                      }`}
+                    >
+                      {service.iconType === "design"
+                        ? "Basic"
+                        : service.featured
+                          ? "Pro"
+                          : "Business"}
                     </span>
-                  ) : null}
+                    <span
+                      className={`ml-1 text-sm ${
+                        service.featured
+                          ? "text-zinc-300"
+                          : "text-zinc-500 dark:text-zinc-400"
+                      }`}
+                    >
+                      service
+                    </span>
+                    <p
+                      className={`mt-3 text-xs ${
+                        service.featured
+                          ? "text-zinc-400"
+                          : "text-zinc-500 dark:text-zinc-500"
+                      }`}
+                    >
+                      billed per project
+                    </p>
+                  </div>
                 </div>
 
-                <p className="mt-4 text-sm leading-6 text-zinc-500 dark:text-zinc-400">
-                  {service.description}
-                </p>
-
-                <div className="mt-5 text-3xl font-semibold tracking-[-0.06em] sm:text-4xl">
-                  {service.price}
-                  <span className="ml-2 text-sm font-medium tracking-normal text-zinc-500">
-                    INR
-                  </span>
-                </div>
-
-                <ul className="mt-6 space-y-3">
+                <div
+                  className={`border-t px-5 py-6 sm:px-6 ${
+                    service.featured
+                      ? "border-white/10"
+                      : "border-zinc-200 dark:border-white/10"
+                  }`}
+                >
+                  <ul className="space-y-4">
                   {service.features.map((feature, featureIndex) => {
                     const mutedFeature =
                       !service.featured && featureIndex === service.features.length - 1;
@@ -513,43 +501,55 @@ export default function Home() {
                     return (
                       <li
                         key={feature}
-                        className={`flex gap-2.5 text-xs leading-5 sm:text-sm ${
-                          mutedFeature
-                            ? "text-zinc-500 dark:text-zinc-500"
-                            : "text-zinc-950 dark:text-zinc-100"
+                        className={`flex items-start gap-3 text-sm leading-5 ${
+                          service.featured
+                            ? mutedFeature
+                              ? "text-zinc-400"
+                              : "text-zinc-300"
+                            : mutedFeature
+                              ? "text-zinc-500"
+                              : "text-zinc-600 dark:text-zinc-400"
                         }`}
                       >
-                        {mutedFeature ? (
-                          <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-zinc-300 dark:bg-zinc-600" />
-                        ) : (
-                          <svg
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                            className="mt-0.5 size-4 shrink-0 stroke-current"
-                            fill="none"
-                            strokeWidth="2.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="m5 12 4 4L19 6" />
-                          </svg>
-                        )}
-                        <span>
-                        {feature}
-                      </span>
+                        <svg
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                          className={`mt-0.5 size-4 shrink-0 ${
+                            service.featured
+                              ? "stroke-zinc-200"
+                              : "stroke-zinc-700 dark:stroke-zinc-200"
+                          }`}
+                          fill="none"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <circle cx="12" cy="12" r="9" />
+                          <path d="m8.5 12 2.4 2.4 4.6-5" />
+                        </svg>
+                        <span>{feature}</span>
                       </li>
                     );
                   })}
-                </ul>
+                  </ul>
+                </div>
 
-                <a
-                  href={`/get-started/${service.slug}`}
-                  className="mt-6 inline-flex h-10 w-full items-center justify-center rounded-xl bg-zinc-950 px-5 text-xs font-semibold text-white transition hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
+                <div
+                  className={`mt-auto border-t p-4 ${
+                    service.featured
+                      ? "border-white/10"
+                      : "border-zinc-200 dark:border-white/10"
+                  }`}
                 >
-                  Get started
-                </a>
-              </article>
-            ))}
+                  <ServiceShimmerLink
+                    href={`/get-started/${service.slug}`}
+                    featured={service.featured}
+                    label="Get started"
+                  />
+                </div>
+                  </article>
+                ))}
+            </div>
           </div>
         </section>
 
@@ -581,7 +581,7 @@ export default function Home() {
                 </p>
               </details>
             ))}
-          </div>
+        </div>
         </section>
       </main>
 

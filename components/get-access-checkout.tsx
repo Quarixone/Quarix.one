@@ -136,7 +136,7 @@ export function GetAccessCheckout({ template }: GetAccessCheckoutProps) {
         <div>
           <Link
             href="/templates"
-            className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition hover:text-zinc-950"
+            className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition hover:text-zinc-950 dark:hover:text-white"
           >
             <ArrowLeft className="size-4" />
             Back
@@ -152,7 +152,7 @@ export function GetAccessCheckout({ template }: GetAccessCheckoutProps) {
             </h1>
           </div>
 
-          <div className="mt-8 border-b border-zinc-200 pb-6 sm:mt-12">
+          <div className="mt-8 border-b border-zinc-200 pb-6 sm:mt-12 dark:border-white/10">
             <div className="overflow-hidden rounded-[1.5rem] border border-zinc-900/10 bg-[#07070a] shadow-xl shadow-black/10">
               <div className="relative min-h-48 sm:min-h-52">
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:48px_48px]" />
@@ -164,7 +164,7 @@ export function GetAccessCheckout({ template }: GetAccessCheckoutProps) {
             </div>
 
             <div className="mt-5 flex gap-3 sm:gap-4">
-              <span className="relative grid size-12 shrink-0 place-items-center rounded-2xl bg-zinc-100">
+              <span className="relative grid size-12 shrink-0 place-items-center rounded-2xl bg-zinc-100 dark:bg-white/10">
                 <Image
                   src="/quarix-logo-transparent.png"
                   alt="Quarix logo"
@@ -192,7 +192,7 @@ export function GetAccessCheckout({ template }: GetAccessCheckoutProps) {
 
             {showPromoInput ? (
               <div className="space-y-2">
-                <span className="text-sm font-medium text-zinc-700">
+                <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
                   Promotion code
                 </span>
                 <div className="flex flex-col gap-2 min-[420px]:flex-row">
@@ -204,12 +204,12 @@ export function GetAccessCheckout({ template }: GetAccessCheckoutProps) {
                       setIsPromoApplied(false);
                     }}
                     placeholder="Enter promo code"
-                    className="h-11 min-w-0 flex-1 rounded-xl border border-zinc-200 px-4 text-sm outline-none transition placeholder:text-zinc-400 focus:border-zinc-950"
+                    className="h-11 min-w-0 flex-1 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-zinc-950 dark:border-white/10 dark:bg-black/40 dark:text-white dark:focus:border-white"
                   />
                   <button
                     type="button"
                     onClick={applyPromoCode}
-                    className="h-11 rounded-xl bg-zinc-100 px-4 text-sm font-semibold text-zinc-700 transition hover:bg-zinc-200"
+                    className="h-11 rounded-xl bg-zinc-100 px-4 text-sm font-semibold text-zinc-700 transition hover:bg-zinc-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/15"
                   >
                     Apply
                   </button>
@@ -228,7 +228,7 @@ export function GetAccessCheckout({ template }: GetAccessCheckoutProps) {
               <button
                 type="button"
                 onClick={() => setShowPromoInput(true)}
-                className="rounded-lg bg-zinc-100 px-3 py-2 text-sm font-medium text-zinc-700 transition hover:bg-zinc-200"
+                className="rounded-lg bg-zinc-100 px-3 py-2 text-sm font-medium text-zinc-700 transition hover:bg-zinc-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/15"
               >
                 Add promotion code
               </button>
@@ -243,7 +243,7 @@ export function GetAccessCheckout({ template }: GetAccessCheckoutProps) {
               </div>
             ) : null}
 
-            <div className="h-px bg-zinc-200" />
+            <div className="h-px bg-zinc-200 dark:bg-white/10" />
             <div className="flex items-center justify-between font-semibold">
               <span>Total due</span>
               <span>

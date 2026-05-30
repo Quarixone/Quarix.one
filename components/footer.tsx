@@ -21,27 +21,28 @@ const footerLinks: FooterSection[] = [
 		label: "Product",
 		links: [
 			{ title: "Templates", href: "/templates" },
-			{ title: "Showcase", href: "/#showcase" },
+			{ title: "Showcase", href: "/showcase" },
 			{ title: "Testimonials", href: "/#testimonials" },
-			{ title: "Services", href: "/#services" },
+			{ title: "Services", href: "/services" },
+			{ title: "AI Agents", href: "/ai-agents" },
 		],
 	},
 	{
 		label: "Services",
 		links: [
-			{ title: "Custom Website", href: "/#services" },
-			{ title: "Business Site", href: "/#services" },
-			{ title: "AI Website", href: "/#services" },
-			{ title: "Support", href: "/#services" },
+			{ title: "Custom Website", href: "/services" },
+			{ title: "Business Site", href: "/services" },
+			{ title: "AI Website", href: "/services" },
+			{ title: "Support", href: "/services" },
 		],
 	},
 	{
 		label: "Resources",
 		links: [
 			{ title: "FAQ", href: "/#faq" },
-			{ title: "Privacy", href: "/" },
-			{ title: "Terms", href: "/" },
-			{ title: "Contact", href: "/#services" },
+			{ title: "Privacy", href: "/privacy" },
+			{ title: "Terms", href: "/terms" },
+			{ title: "Contact", href: "/contact" },
 		],
 	},
 ];

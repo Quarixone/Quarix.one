@@ -57,33 +57,33 @@ export function GetStartedForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-black/40 backdrop-blur sm:p-7"
+      className="rounded-[2rem] border border-zinc-200 bg-white/80 p-5 shadow-2xl shadow-zinc-950/10 backdrop-blur sm:p-7 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-black/40"
     >
       <div className="mb-6">
         <p className="text-sm font-semibold text-sky-300">Project request</p>
-        <h2 className="mt-2 text-2xl font-semibold tracking-[-0.05em] text-white">
+        <h2 className="mt-2 text-2xl font-semibold tracking-[-0.05em] text-zinc-950 dark:text-white">
           Tell me what you need.
         </h2>
-        <p className="mt-2 text-sm leading-6 text-zinc-400">
+        <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
           Share a few details and I will reply by email with the next steps.
         </p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-2">
-          <span className="text-sm font-medium text-zinc-300">
+          <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
             Name
           </span>
           <input
             name="name"
             required
             placeholder="Your name"
-            className="h-12 w-full rounded-2xl border border-white/10 bg-black/40 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-sky-300 focus:bg-black/60 focus:ring-4 focus:ring-sky-400/10"
+            className="h-12 w-full rounded-2xl border border-zinc-200 bg-white px-4 text-sm text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-sky-300 focus:ring-4 focus:ring-sky-400/10 dark:border-white/10 dark:bg-black/40 dark:text-white dark:placeholder:text-zinc-500 dark:focus:bg-black/60"
           />
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-medium text-zinc-300">
+          <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
             Email
           </span>
           <input
@@ -91,43 +91,51 @@ export function GetStartedForm({
             type="email"
             required
             placeholder="you@example.com"
-            className="h-12 w-full rounded-2xl border border-white/10 bg-black/40 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-sky-300 focus:bg-black/60 focus:ring-4 focus:ring-sky-400/10"
+            className="h-12 w-full rounded-2xl border border-zinc-200 bg-white px-4 text-sm text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-sky-300 focus:ring-4 focus:ring-sky-400/10 dark:border-white/10 dark:bg-black/40 dark:text-white dark:placeholder:text-zinc-500 dark:focus:bg-black/60"
           />
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-medium text-zinc-300">
+          <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
             Phone
           </span>
           <input
             name="phone"
             type="tel"
-            placeholder="+91 98765 43210"
-            className="h-12 w-full rounded-2xl border border-white/10 bg-black/40 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-sky-300 focus:bg-black/60 focus:ring-4 focus:ring-sky-400/10"
+            placeholder="Enter your phone number"
+            className="h-12 w-full rounded-2xl border border-zinc-200 bg-white px-4 text-sm text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-sky-300 focus:ring-4 focus:ring-sky-400/10 dark:border-white/10 dark:bg-black/40 dark:text-white dark:placeholder:text-zinc-500 dark:focus:bg-black/60"
           />
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-medium text-zinc-300">
-            Budget
+          <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            Budget (INR)
           </span>
-          <select
+          <input
             name="budget"
-            className="h-12 w-full rounded-2xl border border-white/10 bg-black/40 px-4 text-sm text-white outline-none transition focus:border-sky-300 focus:bg-black/60 focus:ring-4 focus:ring-sky-400/10"
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Select budget
-            </option>
-            <option value="₹4,999 - ₹9,999">₹4,999 - ₹9,999</option>
-            <option value="₹10,000 - ₹19,999">₹10,000 - ₹19,999</option>
-            <option value="₹20,000+">₹20,000+</option>
-          </select>
+            type="number"
+            min={5000}
+            step={500}
+            required
+            onInvalid={(event) => {
+              const input = event.currentTarget;
+
+              input.setCustomValidity(
+                input.validity.rangeUnderflow
+                  ? "Minimum budget is ₹5,000 only."
+                  : "Please enter your budget.",
+              );
+            }}
+            onInput={(event) => {
+              event.currentTarget.setCustomValidity("");
+            }}
+            className="h-12 w-full rounded-2xl border border-zinc-200 bg-white px-4 text-sm text-zinc-950 outline-none transition focus:border-sky-300 focus:ring-4 focus:ring-sky-400/10 dark:border-white/10 dark:bg-black/40 dark:text-white dark:focus:bg-black/60"
+          />
         </label>
       </div>
 
       <label className="mt-4 block space-y-2">
-        <span className="text-sm font-medium text-zinc-300">
+        <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
           Project details
         </span>
         <textarea
@@ -135,7 +143,7 @@ export function GetStartedForm({
           required
           rows={6}
           placeholder="Tell me about your business, website goals, pages needed, and timeline."
-          className="w-full resize-none rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm leading-6 text-white outline-none transition placeholder:text-zinc-500 focus:border-sky-300 focus:bg-black/60 focus:ring-4 focus:ring-sky-400/10"
+          className="w-full resize-none rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-sm leading-6 text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-sky-300 focus:ring-4 focus:ring-sky-400/10 dark:border-white/10 dark:bg-black/40 dark:text-white dark:placeholder:text-zinc-500 dark:focus:bg-black/60"
         />
       </label>
 

@@ -79,7 +79,7 @@ export default async function GetAccessPage({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-white text-zinc-950">
+    <main className="min-h-screen bg-white text-zinc-950 dark:bg-[#050505] dark:text-white">
       <GetAccessCheckout template={template} />
     </main>
   );

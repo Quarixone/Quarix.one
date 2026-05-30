@@ -240,27 +240,27 @@ export function RazorpayStandardCheckout({
           Contact information
         </h2>
         <label className="mt-5 block space-y-2">
-          <span className="text-sm font-medium text-zinc-700">Email</span>
+          <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">Email</span>
           <input
             type="email"
             required
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             placeholder="you@example.com"
-            className="h-12 w-full rounded-xl border border-zinc-200 px-4 text-sm outline-none transition placeholder:text-zinc-400 focus:border-zinc-950"
+            className="h-12 w-full rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-zinc-950 dark:border-white/10 dark:bg-black/40 dark:text-white dark:focus:border-white"
           />
         </label>
 
         <h3 className="mt-8 text-lg font-semibold tracking-[-0.03em]">
           Payment method
         </h3>
-        <div className="mt-4 rounded-2xl border border-zinc-200 bg-white p-4">
+        <div className="mt-4 rounded-2xl border border-zinc-200 bg-white p-4 dark:border-white/10 dark:bg-white/[0.04]">
           <div className="flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-xl bg-zinc-100">
-              <CreditCard className="size-4 text-zinc-700" />
+            <span className="grid size-10 place-items-center rounded-xl bg-zinc-100 dark:bg-white/10">
+              <CreditCard className="size-4 text-zinc-700 dark:text-zinc-200" />
             </span>
             <div>
-              <p className="text-sm font-semibold text-zinc-950">
+              <p className="text-sm font-semibold text-zinc-950 dark:text-white">
                 Razorpay Standard Checkout
               </p>
               <p className="text-xs text-zinc-500">
@@ -269,7 +269,7 @@ export function RazorpayStandardCheckout({
             </div>
           </div>
 
-          <div className="mt-4 flex items-start gap-2 rounded-xl bg-zinc-50 p-3 text-xs leading-5 text-zinc-500">
+          <div className="mt-4 flex items-start gap-2 rounded-xl bg-zinc-50 p-3 text-xs leading-5 text-zinc-500 dark:bg-white/5 dark:text-zinc-400">
             <ShieldCheck className="mt-0.5 size-4 shrink-0 text-emerald-500" />
             Your order is created on the server and verified after payment.
           </div>
@@ -280,7 +280,7 @@ export function RazorpayStandardCheckout({
           type="button"
           onClick={openCheckout}
           disabled={status === "loading"}
-          className="mt-6 inline-flex h-12 w-full items-center justify-center rounded-xl bg-black px-5 text-sm font-semibold text-white transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-60"
+          className="mt-6 inline-flex h-12 w-full items-center justify-center rounded-xl bg-black px-5 text-sm font-semibold text-white transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
         >
           {status === "loading" ? "Opening checkout..." : `Pay ${displayPrice}`}
         </button>
