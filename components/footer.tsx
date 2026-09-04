@@ -1,4 +1,5 @@
 import { QuarixMark } from "@/components/logo";
+import { email, mailto } from "@/lib/site";
 
 const LINK =
   "text-[11.5px] leading-none tracking-[-0.006em] text-muted transition-colors duration-300 hover:text-foreground";
@@ -23,8 +24,8 @@ export function Footer() {
         </div>
 
         <div className="flex items-center gap-6">
-          <a href="mailto:quarixone@gmail.com" className={LINK}>
-            quarixone@gmail.com
+          <a href={mailto()} className={LINK}>
+            {email}
           </a>
           <a
             href="https://www.gokulakrishnan.dev"

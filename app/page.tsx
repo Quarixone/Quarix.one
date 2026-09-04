@@ -1,3 +1,4 @@
+import { calUrl, mailto } from "@/lib/site";
 import { FounderAvatar } from "@/components/founder-avatar";
 import { QuarixMark } from "@/components/logo";
 import { Pricing } from "@/components/pricing";
@@ -104,14 +105,16 @@ export default function Home() {
           className="will-reveal flex flex-wrap items-center gap-2"
         >
           <a
-            href="mailto:quarixone@gmail.com?subject=Intro%20call"
+            href={calUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-1.5 rounded-full bg-gradient-to-b from-[var(--button-from)] to-[var(--button-to)] px-4 py-3 text-[12.5px] sm:py-[9px] font-medium leading-[17px] tracking-[-0.01em] text-[var(--button-text)] shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_1px_2px_rgba(0,0,0,0.16)] transition-[filter,transform] duration-300 ease-out hover:brightness-110 active:scale-[0.98]"
           >
             Book an intro call
             <ArrowUpRight />
           </a>
           <a
-            href="mailto:quarixone@gmail.com"
+            href={mailto()}
             className="inline-flex items-center gap-1.5 rounded-full border border-foreground/12 px-4 py-3 text-[12.5px] sm:py-[9px] font-medium leading-[17px] tracking-[-0.01em] text-foreground transition-colors duration-300 ease-out hover:border-foreground/25"
           >
             <MailIcon />

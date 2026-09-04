@@ -1,5 +1,8 @@
 import type { ReactNode } from "react";
 
+import { calUrl } from "@/lib/site";
+
+
 function Check() {
   return (
     <svg
@@ -109,6 +112,7 @@ function Plan({
   href,
   features,
   featured = false,
+  external = false,
 }: {
   name: string;
   prefix?: string;
@@ -118,6 +122,7 @@ function Plan({
   href: string;
   features: string[];
   featured?: boolean;
+  external?: boolean;
 }) {
   return (
     <div
@@ -155,7 +160,13 @@ function Plan({
         </p>
       </div>
 
-      <a href={href} className={`${CTA_BASE} ${featured ? CTA_SOLID : CTA_QUIET}`}>
+      <a
+        href={href}
+        {...(external
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+        className={`${CTA_BASE} ${featured ? CTA_SOLID : CTA_QUIET}`}
+      >
         {cta}
         <ArrowRight />
       </a>
@@ -188,7 +199,7 @@ export function Pricing() {
           price="$150"
           note="For individuals, startups, and small businesses."
           cta="Get started"
-          href="mailto:quarixone@gmail.com?subject=Website%20project"
+          href="/start/website"
           features={[
             "Modern responsive website",
             "Up to 5 pages",
@@ -206,7 +217,7 @@ export function Pricing() {
           price="$200"
           note="For businesses adding AI to their website or workflow."
           cta="Get started"
-          href="mailto:quarixone@gmail.com?subject=AI%20chatbot%20project"
+          href="/start/chatbot"
           features={[
             "Custom AI chatbot",
             "Website integration",
@@ -222,7 +233,8 @@ export function Pricing() {
           price="Let’s talk"
           note="For businesses with larger or custom requirements."
           cta="Contact Quarix"
-          href="mailto:quarixone@gmail.com?subject=Custom%20project"
+          href={calUrl}
+          external
           features={[
             "Custom web applications",
             "Advanced AI solutions",
