@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f7f7f4;
+  --foreground: #1f1f1f;
+  --muted: #6f6f6f;
+  --line: #2a2a2a;
+  --button-from: #3c3c3c;
+  --button-to: #171717;
+  --button-text: #f8f8f8;
+}
+
+.dark {
+  --background: #111111;
+  --foreground: #ecece8;
+  --muted: #9a9a96;
+  --line: #e6e6e2;
+  --button-from: #f4f4f1;
+  --button-to: #d8d8d4;
+  --button-text: #161616;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--foreground) 12%, transparent);
+}
+
+/* GSAP animates these in (see components/page-reveal.tsx); hidden until it does,
+   with a no-JS / reduced-motion fallback that leaves them visible. */
+.will-reveal {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .will-reveal {
+    opacity: 1;
+  }
+}
+
+/* Horizontal carousel track: swipeable, without the scrollbar chrome. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

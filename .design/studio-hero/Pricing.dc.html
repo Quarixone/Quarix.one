@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #f7f7f4;
+      color: #1f1f1f;
+      font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #1f1f1f; text-decoration: none; }
+
+    @keyframes reveal-up {
+      from { opacity: 0; transform: translateY(12px); filter: blur(7px); }
+      to { opacity: 1; transform: none; filter: blur(0); }
+    }
+    .reveal {
+      opacity: 0;
+      animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0ms) forwards;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; animation: none; }
+    }
+  </style>
+</helmet>
+
+<div style="width: 1100px; background: #f7f7f4; padding: 48px 50px; box-sizing: border-box;">
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: stretch;">
+    <div class="reveal" style="--delay: 60ms; display: flex; flex-direction: column; box-sizing: border-box; padding: 28px; border: 1px solid rgba(31,31,31,0.10); border-radius: 16px; background: rgba(31,31,31,0.02);">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <h3 style="margin: 0; font-size: 13.5px; font-weight: 400; line-height: 1; letter-spacing: -0.012em; color: #6f6f6f;">Website</h3>
+          
+        </div>
+        <p style="margin: 0; display: flex; align-items: baseline; gap: 6px;"><span style="font-size: 12.5px; letter-spacing: -0.006em; color: #6f6f6f;">From</span><span style="font-size: 23px; font-weight: 700; line-height: 1; letter-spacing: -0.022em; color: #1f1f1f;">$150</span></p>
+        <p style="margin: 0; min-height: 38px; font-size: 12.5px; line-height: 1.5; letter-spacing: -0.006em; color: #6f6f6f;">For individuals, startups, and small businesses.</p>
+      </div>
+      <a href="mailto:quarixone@gmail.com" style="margin-top: 24px; display: inline-flex; width: 100%; box-sizing: border-box; align-items: center; justify-content: center; gap: 6px; border-radius: 999px; padding: 10px 16px; font-size: 12.5px; font-weight: 500; line-height: 17px; letter-spacing: -0.01em; border: 1px solid rgba(31,31,31,0.12); color: #1f1f1f;">Get started<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"></path><path d="M12.5 5.5 19 12l-6.5 6.5"></path></svg></a>
+      <ul style="margin: 32px 0 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;"><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Modern responsive website</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Up to 5 pages</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Mobile &amp; desktop optimized</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Basic SEO setup</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Contact form</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Deployment &amp; setup</li></ul>
+    </div>
+    <div class="reveal" style="--delay: 150ms; display: flex; flex-direction: column; box-sizing: border-box; padding: 28px; border: 1px solid rgba(31,31,31,0.10); border-radius: 16px; background: rgba(31,31,31,0.05);">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <h3 style="margin: 0; font-size: 13.5px; font-weight: 400; line-height: 1; letter-spacing: -0.012em; color: #6f6f6f;">AI Chatbot</h3>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; letter-spacing: -0.006em; color: #6f6f6f;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5c.6 3 2.2 4.2 3.6 5.6A7.4 7.4 0 0 1 18 13.6a6 6 0 0 1-12 0c0-2 .8-3.3 1.8-4.4.3 1 .9 1.7 1.7 2 .2-3.4 1.4-6.2 2.5-8.7Z"></path></svg>Best Value</span>
+        </div>
+        <p style="margin: 0; display: flex; align-items: baseline; gap: 6px;"><span style="font-size: 12.5px; letter-spacing: -0.006em; color: #6f6f6f;">From</span><span style="font-size: 23px; font-weight: 700; line-height: 1; letter-spacing: -0.022em; color: #1f1f1f;">$200</span></p>
+        <p style="margin: 0; min-height: 38px; font-size: 12.5px; line-height: 1.5; letter-spacing: -0.006em; color: #6f6f6f;">For businesses adding AI to their website or workflow.</p>
+      </div>
+      <a href="mailto:quarixone@gmail.com" style="margin-top: 24px; display: inline-flex; width: 100%; box-sizing: border-box; align-items: center; justify-content: center; gap: 6px; border-radius: 999px; padding: 10px 16px; font-size: 12.5px; font-weight: 500; line-height: 17px; letter-spacing: -0.01em; background: linear-gradient(180deg, #3c3c3c, #171717); color: #f8f8f8; box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 1px 2px rgba(0,0,0,0.16);">Get started<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"></path><path d="M12.5 5.5 19 12l-6.5 6.5"></path></svg></a>
+      <ul style="margin: 32px 0 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;"><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Custom AI chatbot</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Website integration</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Knowledge base &amp; documents</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>AI-powered responses</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Basic customization</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Deployment &amp; setup</li></ul>
+    </div>
+    <div class="reveal" style="--delay: 240ms; display: flex; flex-direction: column; box-sizing: border-box; padding: 28px; border: 1px solid rgba(31,31,31,0.10); border-radius: 16px; background: rgba(31,31,31,0.02);">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <h3 style="margin: 0; font-size: 13.5px; font-weight: 400; line-height: 1; letter-spacing: -0.012em; color: #6f6f6f;">Custom</h3>
+          
+        </div>
+        <p style="margin: 0; display: flex; align-items: baseline; gap: 6px;"><span style="font-size: 23px; font-weight: 700; line-height: 1; letter-spacing: -0.022em; color: #1f1f1f;">Let&#8217;s talk</span></p>
+        <p style="margin: 0; min-height: 38px; font-size: 12.5px; line-height: 1.5; letter-spacing: -0.006em; color: #6f6f6f;">For businesses with larger or custom requirements.</p>
+      </div>
+      <a href="mailto:quarixone@gmail.com" style="margin-top: 24px; display: inline-flex; width: 100%; box-sizing: border-box; align-items: center; justify-content: center; gap: 6px; border-radius: 999px; padding: 10px 16px; font-size: 12.5px; font-weight: 500; line-height: 17px; letter-spacing: -0.01em; border: 1px solid rgba(31,31,31,0.12); color: #1f1f1f;">Contact Quarix<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"></path><path d="M12.5 5.5 19 12l-6.5 6.5"></path></svg></a>
+      <ul style="margin: 32px 0 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;"><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Custom web applications</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Advanced AI solutions</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>AI agents &amp; automation</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>API &amp; third-party integrations</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Custom UI/UX</li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.006em; color: rgba(31,31,31,0.80);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(31,31,31,0.55)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 3px; flex-shrink: 0;"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"></path></svg>Ongoing support</li></ul>
+    </div>
+  </div>
+
+  <p class="reveal" style="--delay: 330ms; margin: 40px 0 0 0; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; letter-spacing: -0.006em; color: #6f6f6f;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8 20 6v6.2c0 4.4-3.2 7.6-8 9.1-4.8-1.5-8-4.7-8-9.1V6Z"></path><path d="M9 12.2 11.2 14.4 15.4 10.2"></path></svg>Final pricing depends on scope.</p>
+</div>
+</x-dc>
+</body>
+</html>

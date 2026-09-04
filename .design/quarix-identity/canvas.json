@@ -1,0 +1,14 @@
+{
+  "artboards": [
+    { "file": "Analysis.dc.html",     "title": "01 — Reference reading", "x": 0,    "y": 0,    "w": 1040, "h": 900 },
+    { "file": "Concepts.dc.html",     "title": "02 — Five concepts",     "x": 1160, "y": 0,    "w": 1450, "h": 720 },
+    { "file": "Refined.dc.html",      "title": "03 — Shortlist",         "x": 0,    "y": 1020, "w": 1240, "h": 900 },
+    { "file": "Main.dc.html",         "title": "04 — Recommendation",    "x": 1360, "y": 1020, "w": 1240, "h": 960 },
+    { "file": "System.dc.html",       "title": "05 — Logo system",       "x": 0,    "y": 2100, "w": 1240, "h": 950 },
+    { "file": "Applications.dc.html", "title": "06 — In use",            "x": 1360, "y": 2100, "w": 1300, "h": 1220 }
+  ],
+  "annotations": [
+    { "id": "read-order", "x": 0, "y": -260, "w": 640, "text": "Read left to right, top to bottom: reference principles, five concepts, the two that survive, the recommendation, the asset system, then the mark in use.\n\nThe recommended direction is QUARTER - a ring with one quadrant stepped out along the diagonal. Everything on boards 05 and 06 is drawn from that one construction.\n\nThe reference was used for principles only: restraint, a single-operation mark, cap-line alignment, monochrome first. None of its shapes, letterforms or proportions are carried across.\n\nTo fill in: the studio domain (shown as [quarix.com] on the business card). The wordmark is set in Geist, the same family the Quarix site already loads - swap it if you license a different face." }
+  ],
+  "launch": { "view": "canvas" }
+}

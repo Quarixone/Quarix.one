@@ -1,0 +1,10 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "title": "Hero", "x": 0, "y": 0, "w": 1252, "h": 560 },
+    { "file": "Pricing.dc.html", "title": "Pricing", "x": 76, "y": 700, "w": 1100, "h": 620 }
+  ],
+  "annotations": [
+    { "id": "notes", "x": 0, "y": -240, "w": 600, "text": "Both artboards match what is live in the Quarix site (app/page.tsx, components/pricing.tsx), on the site's own tokens: #f7f7f4 background, #1f1f1f text, #6f6f6f muted, Geist, and the gradient pill button. Dark mode is handled by the site's theme toggle, so these boards show the light theme only.\n\nMotion: on the site GSAP runs the hero on load and the pricing cards on scroll into view. These boards use the CSS equivalent - the artboard sandbox cannot load GSAP - so reload to replay.\n\nOpen items:\n- The face in the founder card is a drawn placeholder.\n- Book an intro call has no scheduling link yet; every pricing CTA opens mail to hello@quarix.com." }
+  ],
+  "launch": { "view": "canvas" }
+}
