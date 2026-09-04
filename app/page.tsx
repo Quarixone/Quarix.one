@@ -1,8 +1,13 @@
+import type { CSSProperties } from "react";
+
 import { calUrl, mailto } from "@/lib/site";
 import { FounderAvatar } from "@/components/founder-avatar";
 import { QuarixMark } from "@/components/logo";
 import { Pricing } from "@/components/pricing";
 import { Projects } from "@/components/projects";
+
+/** Stagger step for the CSS hero reveal. */
+const delay = (ms: number) => ({ "--delay": `${ms}ms` }) as CSSProperties;
 
 function ArrowUpRight() {
   return (
@@ -49,14 +54,15 @@ export default function Home() {
       <section
         data-parallax-hero
         className="mx-auto flex w-full max-w-[560px] flex-col items-start gap-6 px-5 pb-24 pt-[12vh] sm:gap-7 sm:px-6 sm:pt-[15vh]">
-        <div data-reveal className="will-reveal text-foreground">
+        <div data-reveal style={delay(0)} className="text-foreground">
           <QuarixMark size={32} />
         </div>
 
         <div className="flex w-full flex-col items-start gap-3 sm:gap-3.5">
           <h1
             data-reveal
-          className="will-reveal max-w-[500px] text-pretty text-[19px] font-bold leading-[1.32] tracking-[-0.022em] text-foreground sm:text-[22px] md:text-[25px]"
+          style={delay(80)}
+          className="max-w-[500px] text-pretty text-[19px] font-bold leading-[1.32] tracking-[-0.022em] text-foreground sm:text-[22px] md:text-[25px]"
           >
             We design and build digital products
             <br className="hidden sm:inline" />{" "}
@@ -65,7 +71,8 @@ export default function Home() {
 
           <p
             data-reveal
-          className="will-reveal max-w-[480px] text-pretty text-[13px] leading-[1.65] tracking-[-0.006em] text-foreground/75 sm:text-[13.5px]"
+          style={delay(160)}
+          className="max-w-[480px] text-pretty text-[13px] leading-[1.65] tracking-[-0.006em] text-foreground/75 sm:text-[13.5px]"
           >
             Quarix is a team of designers and AI engineers helping businesses
             build modern websites, AI chatbots, and custom digital products.
@@ -74,7 +81,8 @@ export default function Home() {
 
         <p
           data-reveal
-          className="will-reveal max-w-[480px] text-pretty text-[13px] leading-[1.65] tracking-[-0.006em] text-foreground/75 sm:text-[13.5px]"
+          style={delay(240)}
+          className="max-w-[480px] text-pretty text-[13px] leading-[1.65] tracking-[-0.006em] text-foreground/75 sm:text-[13.5px]"
         >
           From idea to launch, we help you build products that are simple,
           useful, and built to grow.
@@ -82,7 +90,8 @@ export default function Home() {
 
         <div
           data-reveal
-          className="will-reveal flex max-w-full items-center gap-2.5 rounded-[13px] border border-foreground/10 bg-background px-3 py-2 text-left shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition-colors duration-300 hover:border-foreground/20"
+          style={delay(320)}
+          className="flex max-w-full items-center gap-2.5 rounded-[13px] border border-foreground/10 bg-background px-3 py-2 text-left shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition-colors duration-300 hover:border-foreground/20"
         >
           <FounderAvatar />
           <div className="flex min-w-0 flex-col gap-0.5">
@@ -102,7 +111,8 @@ export default function Home() {
 
         <div
           data-reveal
-          className="will-reveal flex flex-wrap items-center gap-2"
+          style={delay(400)}
+          className="flex flex-wrap items-center gap-2"
         >
           <a
             href={calUrl}

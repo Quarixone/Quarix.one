@@ -12,13 +12,13 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
-  { name: "Finlio", src: "/projects/finlio.png" },
-  { name: "Finlio — Our story", src: "/projects/finliostory.png" },
-  { name: "GTA Funding", src: "/projects/gta-funding.png" },
-  { name: "Kivo", src: "/projects/kivo.png" },
+  { name: "Finlio", src: "/projects/finlio.jpg" },
+  { name: "Finlio — Our story", src: "/projects/finliostory.jpg" },
+  { name: "GTA Funding", src: "/projects/gta-funding.jpg" },
+  { name: "Kivo", src: "/projects/kivo.jpg" },
   { name: "Build Your Identity", src: "/projects/san.jpg" },
   { name: "Britalian", src: "/projects/web.jpg" },
-  { name: "Personal site", src: "/projects/personal-site.png" },
+  { name: "Personal site", src: "/projects/personal-site.jpg" },
 ];
 
 function PlaceholderPanel() {

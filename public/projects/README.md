@@ -2,13 +2,13 @@ Project screenshots for the home page carousel.
 
 In use (components/projects.tsx holds the order and the alt text):
 
-  finlio.png          Finlio — waitlist landing
-  finliostory.png     Finlio — our story
-  gta-funding.png     GTA Funding
-  kivo.png            Kivo
+  finlio.jpg          Finlio — waitlist landing
+  finliostory.jpg     Finlio — our story
+  gta-funding.jpg     GTA Funding
+  kivo.jpg            Kivo
   san.jpg             Build Your Identity
   web.jpg             Britalian
-  personal-site.png   Personal site
+  personal-site.jpg   Personal site
 
 Not wired up:
 

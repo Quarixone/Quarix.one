@@ -45,14 +45,40 @@ body {
   background: color-mix(in srgb, var(--foreground) 12%, transparent);
 }
 
-/* GSAP animates these in (see components/page-reveal.tsx); hidden until it does,
-   with a no-JS / reduced-motion fallback that leaves them visible. */
-.will-reveal {
+/* Above the fold: animates at first paint with no JS involved, so the hero
+   is never waiting on a bundle to become visible. */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-reveal],
+[data-reveal-late] {
+  opacity: 0;
+  animation: reveal-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0ms)
+    forwards;
+}
+
+/* Below the fold: GSAP reveals these on scroll. The html.js guard means they
+   stay visible if scripts never run. */
+html.js .will-reveal {
   opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .will-reveal {
+  [data-reveal],
+  [data-reveal-late] {
+    opacity: 1;
+    animation: none;
+  }
+
+  html.js .will-reveal {
     opacity: 1;
   }
 }

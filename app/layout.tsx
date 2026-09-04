@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import type { CSSProperties } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { PageReveal } from "@/components/page-reveal";
@@ -47,6 +48,7 @@ export const viewport: Viewport = {
 };
 
 const themeScript = `
+document.documentElement.classList.add("js");
 try {
   const stored = localStorage.getItem("theme");
   const dark = stored === "dark" || (!stored && matchMedia("(prefers-color-scheme: dark)").matches);
@@ -63,13 +65,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full bg-background font-sans text-foreground">
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <noscript>
-          <style>{`.will-reveal { opacity: 1 !important; }`}</style>
-        </noscript>
         <PageReveal>
           <header
             data-reveal-late
-            className="will-reveal flex items-center justify-end px-6 pt-6 sm:px-10 sm:pt-7"
+            style={{ "--delay": "470ms" } as CSSProperties}
+            className="flex items-center justify-end px-6 pt-6 sm:px-10 sm:pt-7"
           >
             <ThemeToggle />
           </header>

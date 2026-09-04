@@ -25,18 +25,15 @@ export function PageReveal({ children }: { children: ReactNode }) {
 
   useGSAP(
     () => {
-      const items = gsap.utils.toArray<HTMLElement>("[data-reveal]");
-      const late = gsap.utils.toArray<HTMLElement>("[data-reveal-late]");
+      // The hero animates in CSS so it never waits on this bundle.
       const sections = gsap.utils.toArray<HTMLElement>("[data-reveal-scroll]");
       const scrolled = sections.flatMap((section) =>
         gsap.utils.toArray<HTMLElement>(
           section.querySelectorAll("[data-reveal-child]"),
         ),
       );
-      const all = [...items, ...late, ...scrolled];
-
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        gsap.set(all, SHOWN);
+        gsap.set(scrolled, SHOWN);
         return;
       }
 
@@ -46,14 +43,7 @@ export function PageReveal({ children }: { children: ReactNode }) {
         gsap.set(t, { willChange: "transform, opacity" });
       const settle = (t: HTMLElement[]) => gsap.set(t, { willChange: "auto" });
 
-      // --- hero: one timeline on load -----------------------------------
-      gsap.set(all, HIDDEN);
-      promote([...items, ...late]);
-      gsap
-        .timeline({ defaults: { duration: 0.75, ease: EASE } })
-        .to(items, { ...SHOWN, stagger: 0.09 }, 0.05)
-        .to(late, SHOWN, 0.4)
-        .call(() => settle([...items, ...late]));
+      gsap.set(scrolled, HIDDEN);
 
       // --- sections: staggered as each scrolls into view ------------------
       sections.forEach((section) => {
